@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { computed, ref } from 'vue'
 
-export const useCountStore = defineStore('count', () => {
+export const useCounterStore = defineStore('counter', () => {
   const keyPressCount = ref(0)
   const mouseClickCount = ref(0)
   const totalCount = computed(() => keyPressCount.value + mouseClickCount.value)

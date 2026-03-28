@@ -18,7 +18,7 @@ import { useSharedMenu } from '@/composables/useSharedMenu'
 import { useWindowPosition } from '@/composables/useWindowPosition'
 import { hideWindow, setAlwaysOnTop, setTaskbarVisibility, showWindow } from '@/plugins/window'
 import { useCatStore } from '@/stores/cat'
-import { useCountStore } from '@/stores/count'
+import { useCounterStore } from '@/stores/counter'
 import { useGeneralStore } from '@/stores/general.ts'
 import { useModelStore } from '@/stores/model'
 import { isImage } from '@/utils/is'
@@ -36,7 +36,7 @@ const resizing = ref(false)
 const backgroundImagePath = ref<string>()
 const { stickActive } = useGamepad()
 const { isMounted, setWindowPosition } = useWindowPosition()
-const { totalCount } = storeToRefs(useCountStore())
+const { totalCount } = storeToRefs(useCounterStore())
 
 onMounted(startListening)
 
