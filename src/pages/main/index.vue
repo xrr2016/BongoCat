@@ -180,7 +180,7 @@ function handleMouseMove(event: MouseEvent) {
       :src="convertFileSrc(path)"
     >
 
-    <div class="text-sm">
+    <div class="text-sm text-lightBlue opacity-65">
       {{ totalCount }}
     </div>
 
