@@ -180,7 +180,9 @@ function handleMouseMove(event: MouseEvent) {
       :src="convertFileSrc(path)"
     >
 
-    <div>{{ totalCount }}</div>
+    <div class="text-sm">
+      {{ totalCount }}
+    </div>
 
     <div
       v-show="resizing"
