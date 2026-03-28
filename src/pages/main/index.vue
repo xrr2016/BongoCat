@@ -17,6 +17,7 @@ import { useSharedMenu } from '@/composables/useSharedMenu'
 import { useWindowPosition } from '@/composables/useWindowPosition'
 import { hideWindow, setAlwaysOnTop, setTaskbarVisibility, showWindow } from '@/plugins/window'
 import { useCatStore } from '@/stores/cat'
+import { useCountStore } from '@/stores/count'
 import { useGeneralStore } from '@/stores/general.ts'
 import { useModelStore } from '@/stores/model'
 import { isImage } from '@/utils/is'
@@ -34,6 +35,7 @@ const resizing = ref(false)
 const backgroundImagePath = ref<string>()
 const { stickActive } = useGamepad()
 const { isMounted, setWindowPosition } = useWindowPosition()
+const { totalCount } = useCountStore()
 
 onMounted(startListening)
 
@@ -176,6 +178,8 @@ function handleMouseMove(event: MouseEvent) {
       class="object-cover"
       :src="convertFileSrc(path)"
     >
+
+    <div>{{ totalCount }}</div>
 
     <div
       v-show="resizing"
