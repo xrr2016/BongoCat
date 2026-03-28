@@ -106,11 +106,10 @@ export function useModel() {
   }
 
   function handleMouseChange(key: string, pressed = true) {
-    countStore.addMouseClickCount()
-
     const id = key === 'Left' ? 'ParamMouseLeftDown' : 'ParamMouseRightDown'
 
     live2d.setParameterValue(id, pressed)
+    countStore.addMouseClickCount(pressed)
   }
 
   async function handleMouseMove(cursorPoint: PhysicalPosition) {

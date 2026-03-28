@@ -10,8 +10,10 @@ export const useCountStore = defineStore('count', () => {
     keyPressCount.value++
   }
 
-  function addMouseClickCount() {
-    mouseClickCount.value++
+  function addMouseClickCount(pressed = true) {
+    if (pressed) {
+      mouseClickCount.value++
+    }
   }
 
   async function getMouseClickCount() {
